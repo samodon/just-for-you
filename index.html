@@ -3,68 +3,107 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Just For You</title>
+  <title>hi.</title>
 
   <style>
-    :root {
-      --bg: #fff6f9;
-      --text: #222;
-    }
-
-    html, body {
-      height: 100%;
-      margin: 0;
-      scroll-behavior: smooth;
-    }
-
     body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont;
-      background: var(--bg);
-      color: var(--text);
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #fafafa;
+      color: #111;
+      height: 100vh;
       overflow-y: scroll;
       scroll-snap-type: y mandatory;
     }
 
     section {
-      min-height: 100vh;
-      padding: 3rem 2rem;
+      height: 100vh;
+      scroll-snap-align: start;
       display: flex;
       align-items: center;
-      scroll-snap-align: start;
+      padding: 4rem;
+      background: linear-gradient(
+        180deg,
+        rgba(255,255,255,0.6),
+        rgba(250,250,250,1)
+      );
+      opacity: 0;
+      transform: translateY(10px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
 
     .content {
-      max-width: 420px;
-      font-size: 1.4rem;
-      line-height: 1.6;
+      max-width: 720px;
       text-align: left;
+      font-size: 1.6rem;
+      line-height: 1.4;
+      letter-spacing: -0.01em;
+    }
+
+    .hi {
+      font-size: 3rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+    }
+
+    .question {
+      font-size: 1.9rem;
+    }
+
+    .cursor::after {
+      content: "|";
+      margin-left: 4px;
+      animation: blink 1s infinite;
+      opacity: 0.7;
+    }
+
+    @keyframes blink {
+      0%, 50%, 100% { opacity: 1; }
+      25%, 75% { opacity: 0; }
     }
 
     .small {
-      font-size: 0.95rem;
-      opacity: 0.65;
+      font-size: 1rem;
+      opacity: 0.7;
       margin-top: 1rem;
+      font-style: italic;
     }
 
     .buttons {
-      margin-top: 1.5rem;
+      margin-top: 2rem;
+      display: none;
+      gap: 1rem;
     }
 
     button {
-      display: inline-block;
-      margin-right: 0.5rem;
-      padding: 0.7rem 1.1rem;
+      font-size: 1.1rem;
+      padding: 0.6rem 1.2rem;
       border-radius: 999px;
       border: none;
-      font-size: 1rem;
       cursor: pointer;
-      background: #222;
-      color: #fff;
+      background: #111;
+      color: white;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.08);
     }
 
     button.secondary {
-      background: #eee;
-      color: #222;
+      background: transparent;
+      border: 1px solid #111;
+      color: #111;
+    }
+
+    button.secondary:hover {
+      background: rgba(0,0,0,0.03);
     }
   </style>
 </head>
@@ -72,96 +111,72 @@
 
   <!-- Intro -->
   <section>
-    <div class="content">Hi.</div>
+    <div class="content hi typewriter" data-text="Hi."></div>
   </section>
 
   <section>
-    <div class="content">It’s me.</div>
+    <div class="content typewriter" data-text="It’s me."></div>
   </section>
 
   <section>
-    <div class="content">
-      I’ve been trying to figure out the right way to say this.
-    </div>
+    <div class="content typewriter" data-text="I’ve been trying to figure out the right way to say this."></div>
   </section>
 
   <section>
-    <div class="content">
-      I didn’t want it to feel rushed.<br>
-      Or awkward.<br>
-      Or half-said.
-    </div>
+    <div class="content typewriter" data-text="I didn’t want it to feel rushed. or awkward. or half-said."></div>
   </section>
 
   <section>
-    <div class="content">So I made this.</div>
+    <div class="content typewriter" data-text="So I made this."></div>
   </section>
 
   <section>
-    <div class="content">
-      This is just me being honest.
-    </div>
+    <div class="content typewriter" data-text="This is just me being honest."></div>
   </section>
 
   <!-- Transition -->
   <section>
-    <div class="content">
-      These are small things.<br>
-      But they mean a lot to me.
-    </div>
+    <div class="content typewriter" data-text="These are small things. But they mean a lot to me."></div>
   </section>
 
   <section>
-    <div class="content">
-      Here’s why you matter to me.
-    </div>
+    <div class="content typewriter" data-text="Here’s why you matter to me."></div>
   </section>
 
   <!-- Feelings -->
   <section>
-    <div class="content">You make me feel calm.</div>
+    <div class="content typewriter" data-text="You make me feel calm."></div>
   </section>
 
   <section>
-    <div class="content">You make me feel seen.</div>
+    <div class="content typewriter" data-text="You make me feel seen."></div>
   </section>
 
   <section>
-    <div class="content">
-      You make me feel comfortable being myself.
-    </div>
+    <div class="content typewriter" data-text="You make me feel comfortable being myself."></div>
   </section>
 
   <section>
-    <div class="content">You make my days better.</div>
+    <div class="content typewriter" data-text="You make my days better."></div>
   </section>
 
   <section>
-    <div class="content">
-      You make me feel like this could be something really good.
-    </div>
+    <div class="content typewriter" data-text="You make me feel like this could be something really good."></div>
   </section>
 
   <!-- Lead-in -->
   <section>
-    <div class="content">
-      I didn’t make this to impress you.<br>
-      I made it because I wanted you to know how I feel.
-    </div>
+    <div class="content typewriter" data-text="I didn’t make this to impress you. I made it because I wanted you to know how I feel."></div>
   </section>
 
   <section>
-    <div class="content">
-      And I wanted to ask you something.
-    </div>
+    <div class="content typewriter" data-text="And I wanted to ask you something."></div>
   </section>
 
   <!-- Question -->
   <section>
-    <div class="content">
-      Will you be my girlfriend?
+    <div class="content typewriter question" data-text="Will you be my girlfriend?">
       <div class="small">(No wrong answers here.)</div>
-
       <div class="buttons">
         <button>Yes 💗</button>
         <button class="secondary">Processing… 💭</button>
@@ -171,11 +186,9 @@
 
   <!-- Ending -->
   <section>
-    <div class="content">
-      No matter what,<br>
-      I’m really glad I got to tell you this.
-    </div>
+    <div class="content typewriter" data-text="No matter what, I’m really glad I got to tell you this."></div>
   </section>
 
+  <script src="typewriter.js"></script>
 </body>
 </html>
