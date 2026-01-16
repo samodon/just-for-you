@@ -4,42 +4,67 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Just For You</title>
+
   <style>
-    body {
+    :root {
+      --bg: #fff6f9;
+      --text: #222;
+    }
+
+    html, body {
+      height: 100%;
       margin: 0;
+      scroll-behavior: smooth;
+    }
+
+    body {
       font-family: system-ui, -apple-system, BlinkMacSystemFont;
-      background: #fff6f9;
-      color: #222;
+      background: var(--bg);
+      color: var(--text);
+      overflow-y: scroll;
+      scroll-snap-type: y mandatory;
     }
 
     section {
       min-height: 100vh;
+      padding: 3rem 2rem;
       display: flex;
       align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 2rem;
+      scroll-snap-align: start;
     }
 
     .content {
       max-width: 420px;
       font-size: 1.4rem;
       line-height: 1.6;
+      text-align: left;
     }
 
     .small {
-      font-size: 1rem;
-      opacity: 0.7;
+      font-size: 0.95rem;
+      opacity: 0.65;
       margin-top: 1rem;
     }
 
+    .buttons {
+      margin-top: 1.5rem;
+    }
+
     button {
-      margin: 0.5rem;
-      padding: 0.8rem 1.2rem;
+      display: inline-block;
+      margin-right: 0.5rem;
+      padding: 0.7rem 1.1rem;
       border-radius: 999px;
       border: none;
       font-size: 1rem;
       cursor: pointer;
+      background: #222;
+      color: #fff;
+    }
+
+    button.secondary {
+      background: #eee;
+      color: #222;
     }
   </style>
 </head>
@@ -62,8 +87,8 @@
 
   <section>
     <div class="content">
-      I didn’t want it to feel rushed.<br />
-      Or awkward.<br />
+      I didn’t want it to feel rushed.<br>
+      Or awkward.<br>
       Or half-said.
     </div>
   </section>
@@ -81,7 +106,7 @@
   <!-- Transition -->
   <section>
     <div class="content">
-      These are small things.<br />
+      These are small things.<br>
       But they mean a lot to me.
     </div>
   </section>
@@ -92,17 +117,13 @@
     </div>
   </section>
 
-  <!-- List Section -->
+  <!-- Feelings -->
   <section>
-    <div class="content">
-      You make me feel calm.
-    </div>
+    <div class="content">You make me feel calm.</div>
   </section>
 
   <section>
-    <div class="content">
-      You make me feel seen.
-    </div>
+    <div class="content">You make me feel seen.</div>
   </section>
 
   <section>
@@ -112,9 +133,7 @@
   </section>
 
   <section>
-    <div class="content">
-      You make my days better.
-    </div>
+    <div class="content">You make my days better.</div>
   </section>
 
   <section>
@@ -123,10 +142,10 @@
     </div>
   </section>
 
-  <!-- Transition to Question -->
+  <!-- Lead-in -->
   <section>
     <div class="content">
-      I didn’t make this to impress you.<br />
+      I didn’t make this to impress you.<br>
       I made it because I wanted you to know how I feel.
     </div>
   </section>
@@ -142,17 +161,18 @@
     <div class="content">
       Will you be my girlfriend?
       <div class="small">(No wrong answers here.)</div>
-      <div style="margin-top:1.5rem;">
+
+      <div class="buttons">
         <button>Yes 💗</button>
-        <button>Processing… 💭</button>
+        <button class="secondary">Processing… 💭</button>
       </div>
     </div>
   </section>
 
-  <!-- End -->
+  <!-- Ending -->
   <section>
     <div class="content">
-      No matter what,<br />
+      No matter what,<br>
       I’m really glad I got to tell you this.
     </div>
   </section>
