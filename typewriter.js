@@ -1,21 +1,21 @@
 const SPEED = 45;
 
-function typeText(el) {
-  const text = el.dataset.text;
+function typeText(container) {
+  const text = container.dataset.text;
+  const output = container.querySelector(".typed");
   let i = 0;
 
-  el.textContent = "";
-  el.classList.add("cursor");
+  container.classList.add("cursor");
 
   function step() {
     if (i < text.length) {
-      el.textContent += text[i];
+      output.textContent += text[i];
       i++;
       setTimeout(step, SPEED);
     } else {
-      el.classList.remove("cursor");
+      container.classList.remove("cursor");
 
-      const buttons = el.querySelector(".buttons");
+      const buttons = container.querySelector(".buttons");
       if (buttons) buttons.style.display = "flex";
     }
   }

@@ -24,7 +24,7 @@
       padding: 4rem;
       background: linear-gradient(
         180deg,
-        rgba(255,255,255,0.6),
+        rgba(255,255,255,0.7),
         rgba(250,250,250,1)
       );
       opacity: 0;
@@ -41,8 +41,21 @@
       max-width: 720px;
       text-align: left;
       font-size: 1.6rem;
-      line-height: 1.4;
+      line-height: 1.45;
       letter-spacing: -0.01em;
+      position: relative;
+      padding-left: 1rem;
+    }
+
+    .content::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.2em;
+      bottom: 0.2em;
+      width: 3px;
+      background: rgba(0,0,0,0.06);
+      border-radius: 2px;
     }
 
     .hi {
@@ -55,11 +68,15 @@
       font-size: 1.9rem;
     }
 
+    .typed {
+      display: inline;
+    }
+
     .cursor::after {
       content: "|";
       margin-left: 4px;
       animation: blink 1s infinite;
-      opacity: 0.7;
+      opacity: 0.6;
     }
 
     @keyframes blink {
@@ -81,8 +98,8 @@
     }
 
     button {
-      font-size: 1.1rem;
-      padding: 0.6rem 1.2rem;
+      font-size: 1.05rem;
+      padding: 0.6rem 1.4rem;
       border-radius: 999px;
       border: none;
       cursor: pointer;
@@ -103,7 +120,27 @@
     }
 
     button.secondary:hover {
-      background: rgba(0,0,0,0.03);
+      background: rgba(0,0,0,0.04);
+    }
+
+    /* ===== BREATHER SECTION ===== */
+    .breather {
+      justify-content: center;
+      text-align: center;
+    }
+
+    .breather .circle {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      background: rgba(0,0,0,0.04);
+      margin-bottom: 1.5rem;
+    }
+
+    .breather .hint {
+      font-size: 0.95rem;
+      opacity: 0.5;
+      letter-spacing: 0.02em;
     }
   </style>
 </head>
@@ -111,71 +148,97 @@
 
   <!-- Intro -->
   <section>
-    <div class="content hi typewriter" data-text="Hi."></div>
+    <div class="content hi typewriter" data-text="hey you.">
+      <span class="typed"></span>
+    </div>
   </section>
 
   <section>
-    <div class="content typewriter" data-text="It’s me."></div>
+    <div class="content typewriter" data-text="Kyleigh...">
+      <span class="typed"></span>
+    </div>
   </section>
 
   <section>
-    <div class="content typewriter" data-text="I’ve been trying to figure out the right way to say this."></div>
+    <div class="content typewriter" data-text="I’ve been trying to figure out the right way to say this.">
+      <span class="typed"></span>
+    </div>
   </section>
 
   <section>
-    <div class="content typewriter" data-text="I didn’t want it to feel rushed. or awkward. or half-said."></div>
+    <div class="content typewriter" data-text="I didn’t want it to feel rushed. or awkward. or half-said.">
+      <span class="typed"></span>
+    </div>
   </section>
 
   <section>
-    <div class="content typewriter" data-text="So I made this."></div>
+    <div class="content typewriter" data-text="So I made this.">
+      <span class="typed"></span>
+    </div>
   </section>
 
   <section>
-    <div class="content typewriter" data-text="This is just me being honest."></div>
-  </section>
-
-  <!-- Transition -->
-  <section>
-    <div class="content typewriter" data-text="These are small things. But they mean a lot to me."></div>
-  </section>
-
-  <section>
-    <div class="content typewriter" data-text="Here’s why you matter to me."></div>
+    <div class="content typewriter" data-text="Here’s why you matter to me.">
+      <span class="typed"></span>
+    </div>
   </section>
 
   <!-- Feelings -->
   <section>
-    <div class="content typewriter" data-text="You make me feel calm."></div>
+    <div class="content typewriter" data-text="You make me feel calm.">
+      <span class="typed"></span>
+    </div>
   </section>
 
   <section>
-    <div class="content typewriter" data-text="You make me feel seen."></div>
+    <div class="content typewriter" data-text="You make me feel seen.">
+      <span class="typed"></span>
+    </div>
   </section>
 
   <section>
-    <div class="content typewriter" data-text="You make me feel comfortable being myself."></div>
+    <div class="content typewriter" data-text="You make me feel comfortable being myself.">
+      <span class="typed"></span>
+    </div>
   </section>
 
   <section>
-    <div class="content typewriter" data-text="You make my days better."></div>
+    <div class="content typewriter" data-text="You make my days better.">
+      <span class="typed"></span>
+    </div>
   </section>
 
   <section>
-    <div class="content typewriter" data-text="You make me feel like this could be something really good."></div>
+    <div class="content typewriter" data-text="You make me feel like this could be something really good.">
+      <span class="typed"></span>
+    </div>
+  </section>
+
+  <!-- Breather Screen -->
+  <section class="breather">
+    <div>
+      <div class="circle"></div>
+      <div class="hint">take your time</div>
+    </div>
   </section>
 
   <!-- Lead-in -->
   <section>
-    <div class="content typewriter" data-text="I didn’t make this to impress you. I made it because I wanted you to know how I feel."></div>
+    <div class="content typewriter" data-text="I didn’t make this to impress you. I made it because I wanted you to know how I feel.">
+      <span class="typed"></span>
+    </div>
   </section>
 
   <section>
-    <div class="content typewriter" data-text="And I wanted to ask you something."></div>
+    <div class="content typewriter" data-text="And I wanted to ask you something.">
+      <span class="typed"></span>
+    </div>
   </section>
 
   <!-- Question -->
   <section>
     <div class="content typewriter question" data-text="Will you be my girlfriend?">
+      <span class="typed"></span>
       <div class="small">(No wrong answers here.)</div>
       <div class="buttons">
         <button>Yes 💗</button>
@@ -186,7 +249,9 @@
 
   <!-- Ending -->
   <section>
-    <div class="content typewriter" data-text="No matter what, I’m really glad I got to tell you this."></div>
+    <div class="content typewriter" data-text="No matter what, I’m really glad I got to tell you this.">
+      <span class="typed"></span>
+    </div>
   </section>
 
   <script src="typewriter.js"></script>
