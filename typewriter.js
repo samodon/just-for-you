@@ -23,15 +23,20 @@ function typeText(container) {
   step();
 }
 
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting && !entry.target.dataset.typed) {
-      entry.target.dataset.typed = "true";
-      entry.target.closest("section").classList.add("visible");
-      typeText(entry.target);
-    }
-  });
-}, { threshold: 0.6 });
+const observer = new IntersectionObserver(
+  entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && !entry.target.dataset.typed) {
+        entry.target.dataset.typed = "true";
+        entry.target.closest("section").classList.add("visible");
+        typeText(entry.target);
+      }
+    });
+  },
+  {
+    threshold: 0.3   // ✅ was 0.6 — too strict for mobile
+  }
+);
 
 document.querySelectorAll(".typewriter").forEach(el => {
   observer.observe(el);
