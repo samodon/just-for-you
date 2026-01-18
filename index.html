@@ -9,12 +9,18 @@
     body {
       margin: 0;
       font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-      background: #fafafa;
       color: #111;
       height: 100vh;
       overflow-y: scroll;
       scroll-snap-type: y mandatory;
-    }
+
+background: linear-gradient(
+  180deg,
+  #ffffff 0%,
+  #faf7f5 40%,
+  #f7f4f2 100%
+              );
+        }
 
     section {
       height: 100vh;
@@ -47,6 +53,7 @@
       padding-left: 1rem;
     }
 
+    /* subtle accent bar */
     .content::before {
       content: "";
       position: absolute;
@@ -61,6 +68,7 @@
     .hi {
       font-size: 3rem;
       font-weight: 600;
+      letter-spacing: -0.02em;
     }
 
     .question {
@@ -94,7 +102,6 @@
       margin-top: 2rem;
       display: none;
       gap: 1rem;
-      flex-wrap: wrap;
     }
 
     button {
@@ -105,6 +112,12 @@
       cursor: pointer;
       background: #111;
       color: white;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.08);
     }
 
     button.secondary {
@@ -113,18 +126,116 @@
       color: #111;
     }
 
-    /* ✅ MOBILE SAFETY NET */
-    @media (max-width: 768px) {
-      .buttons {
-        display: flex;
-      }
+    button.secondary:hover {
+      background: rgba(0,0,0,0.04);
     }
   </style>
 </head>
 <body>
 
-  <!-- (HTML content unchanged — exactly what you already have) -->
+  <!-- Intro -->
+  <section>
+    <div class="content hi typewriter" data-text="hey you.">
+      <span class="typed"></span>
+    </div>
+  </section>
 
+  <section>
+    <div class="content typewriter" data-text="Kyleigh...">
+      <span class="typed"></span>
+    </div>
+  </section>
+
+  <section>
+    <div class="content typewriter" data-text="I’ve been trying to figure out the right way to say this.">
+      <span class="typed"></span>
+    </div>
+  </section>
+
+  <section>
+    <div class="content typewriter" data-text="I didn’t want it to feel rushed. or awkward. or half-said.">
+      <span class="typed"></span>
+    </div>
+  </section>
+
+  <section>
+    <div class="content typewriter" data-text="So I made this.">
+      <span class="typed"></span>
+    </div>
+  </section>
+
+  <section>
+    <div class="content typewriter" data-text="Here’s a few reasons why I love you.">
+      <span class="typed"></span>
+    </div>
+  </section>
+
+  <!-- Feelings -->
+  <section>
+    <div class="content typewriter" data-text="being with you makes me want to dance.">
+      <span class="typed"></span>
+    </div>
+  </section>
+
+  <section>
+    <div class="content typewriter" data-text="You make me feel seen.">
+      <span class="typed"></span>
+    </div>
+  </section>
+
+  <section>
+    <div class="content typewriter" data-text="You make me feel comfortable being myself.">
+      <span class="typed"></span>
+    </div>
+  </section>
+
+  <section>
+    <div class="content typewriter" data-text="You make my days better.">
+      <span class="typed"></span>
+    </div>
+  </section>
+
+  <section>
+    <div class="content typewriter" data-text="You make me feel like this could be something really good.">
+      <span class="typed"></span>
+    </div>
+  </section>
+
+  <!-- Lead-in -->
+  <section>
+    <div class="content typewriter" data-text="I didn’t make this to impress you. I made it because I wanted you to know how I feel.">
+      <span class="typed"></span>
+    </div>
+  </section>
+
+  <section>
+    <div class="content typewriter" data-text="And I wanted to ask you something.">
+      <span class="typed"></span>
+    </div>
+  </section>
+
+  <!-- Question -->
+  <section>
+    <div class="content typewriter question" data-text="Will you be my girlfriend?">
+      <span class="typed"></span>
+      <div class="small">(No wrong answers here.)</div>
+      <div class="buttons">
+        <button>Yes 💗</button>
+        <button class="secondary">Processing… 💭</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ending -->
+  <section>
+    <div class="content typewriter" data-text="No matter what, I’m really glad I got to tell you this.">
+      <span class="typed"></span>
+    </div>
+  </section>
+
+<audio id="bg-audio" preload="auto" loop>
+  <source src="audio/song.mp3" type="audio/mpeg">
+</audio>
   <script src="typewriter.js"></script>
 </body>
 </html>
