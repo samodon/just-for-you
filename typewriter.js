@@ -19,8 +19,10 @@ function typeText(container) {
     } else {
       container.classList.remove("cursor");
 
-      const buttons = container.querySelector(".buttons");
-      if (buttons) buttons.style.display = "flex";
+
+const buttons = container.querySelector(".buttons");
+if (buttons) buttons.classList.add("visible");
+
     }
   }
 
