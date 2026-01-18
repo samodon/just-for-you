@@ -37,26 +37,21 @@ document.querySelectorAll(".typewriter").forEach(el => {
   observer.observe(el);
 });
 
-let audioStarted = false;
-const audio = document.getElementById("bg-audio");
 
-function startAudio() {
+const audio = document.getElementById("bg-audio");
+let audioStarted = false;
+
+function unlockAudio() {
   if (audioStarted) return;
   audioStarted = true;
 
-  audio.volume = 0;
-  audio.play().then(() => {
-    let v = 0;
-    const fade = setInterval(() => {
-      v += 0.02;
-      audio.volume = Math.min(v, 0.5);
-      if (v >= 0.5) clearInterval(fade);
-    }, 50);
-  }).catch(() => {
-    // iOS blocks silently — do nothing
+  audio.volume = 0.5; // set immediately
+  audio.play().catch(() => {
+    // iOS will silently block if gesture is invalid
   });
 }
 
-// 🔑 THESE are what make it work on phones
-document.addEventListener("touchstart", startAudio, { once: true });
-document.addEventListener("mousedown", startAudio, { once: true });
+// MUST be direct
+document.addEventListener("touchstart", unlockAudio, { once: true, passive: true });
+document.addEventListener("mousedown", unlockAudio, { once: true });
+
