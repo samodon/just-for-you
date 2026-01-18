@@ -46,18 +46,17 @@ function startAudio() {
 
   audio.volume = 0;
   audio.play().then(() => {
-    // fade in gently
     let v = 0;
     const fade = setInterval(() => {
       v += 0.02;
-      audio.volume = Math.min(v, 0.6);
-      if (v >= 0.6) clearInterval(fade);
+      audio.volume = Math.min(v, 0.5);
+      if (v >= 0.5) clearInterval(fade);
     }, 50);
   }).catch(() => {
-    // autoplay blocked — ignore silently
+    // iOS blocks silently — do nothing
   });
 }
 
-// first scroll OR touch triggers audio
-window.addEventListener("scroll", startAudio, { once: true });
-window.addEventListener("touchstart", startAudio, { once: true });
+// 🔑 THESE are what make it work on phones
+document.addEventListener("touchstart", startAudio, { once: true });
+document.addEventListener("mousedown", startAudio, { once: true });
