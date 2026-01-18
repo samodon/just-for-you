@@ -38,6 +38,30 @@
       transform: translateY(0);
     }
 
+/* ===== YES SEAL OVERLAY ===== */
+.seal-kiss-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(255, 247, 245, 0.95);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.6s ease;
+  z-index: 9999;
+}
+
+.seal-kiss-overlay.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.seal-kiss-overlay img {
+  max-width: 220px;
+  height: auto;
+}
+
     .content {
       max-width: 680px;
       text-align: left;
@@ -289,6 +313,10 @@
     <source src="audio/song.mp3" type="audio/mpeg">
   </audio>
 
+<!-- Seal Kiss Overlay -->
+<div class="seal-kiss-overlay" id="sealKiss">
+  <img src="gifs/seal-kiss.gif" alt="">
+</div>
   <script src="typewriter.js"></script>
 </body>
 </html>

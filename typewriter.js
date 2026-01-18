@@ -135,3 +135,16 @@ function unlockAudio() {
 
 document.addEventListener("touchstart", unlockAudio, { once: true, passive: true });
 document.addEventListener("mousedown", unlockAudio, { once: true });
+
+/* ===============================
+   YES BUTTON SEAL KISS
+================================ */
+
+const yesButton = document.querySelector(".buttons button");
+const sealKiss = document.getElementById("sealKiss");
+
+if (yesButton && sealKiss) {
+  yesButton.addEventListener("click", () => {
+    sealKiss.classList.add("visible");
+  });
+}
