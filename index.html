@@ -48,6 +48,28 @@
       padding-left: 1.25rem;
     }
 
+
+.word-stack {
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  letter-spacing: inherit;
+}
+
+
+
+.word {
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+
+.word.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
     /* refined accent bar */
     .content::before {
       content: "";
@@ -196,38 +218,50 @@
   </section>
 
   <section>
-    <div class="content typewriter" data-text="You make me feel seen.">
+    <div class="content typewriter" data-text="your presence makes every moment better.">
+      <span class="typed"></span>
+    </div>
+  </section>
+  <section>
+    <div class="content typewriter" data-text="great cook.">
+      <span class="typed"></span>
+      <!-- Seal GIF -->
+      <div class="seal">
+        <img src="gifs/seal-fish.gif" alt="">
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="content typewriter" data-text="you are effortlessly stunning.">
+      <span class="typed"></span>
+    </div>
+  </section>
+  <section>
+    <div class="content typewriter" data-text="you’re someone i genuinely admire and care about. getting to know you has meant more to me than i expected.">
       <span class="typed"></span>
     </div>
   </section>
 
+
+<section>
+  <div class="content word-stack reveal">
+    <div class="word"></div>
+  </div>
+</section>
+
   <section>
-    <div class="content typewriter" data-text="You make me feel comfortable being myself.">
+    <div class="content typewriter" data-text="there's just something special about you.">
       <span class="typed"></span>
+      <!-- Seal GIF -->
+      <div class="seal">
+        <img src="gifs/seal-love.gif" alt="">
+      </div>
     </div>
+
   </section>
 
   <section>
-    <div class="content typewriter" data-text="You make my days better.">
-      <span class="typed"></span>
-    </div>
-  </section>
-
-  <section>
-    <div class="content typewriter" data-text="You make me feel like this could be something really good.">
-      <span class="typed"></span>
-    </div>
-  </section>
-
-  <!-- Lead-in -->
-  <section>
-    <div class="content typewriter" data-text="I didn’t make this to impress you. I made it because I wanted you to know how I feel.">
-      <span class="typed"></span>
-    </div>
-  </section>
-
-  <section>
-    <div class="content typewriter" data-text="And I wanted to ask you something.">
+    <div class="content typewriter" data-text="and I wanted to ask you something.">
       <span class="typed"></span>
     </div>
   </section>
@@ -236,7 +270,7 @@
   <section>
     <div class="content typewriter question" data-text="Will you be my girlfriend?">
       <span class="typed"></span>
-      <div class="small">(No wrong answers here.)</div>
+      <div class="small">(select your answer here.)</div>
       <div class="buttons">
         <button>Yes 💗</button>
         <button class="secondary">Processing… 💭</button>
